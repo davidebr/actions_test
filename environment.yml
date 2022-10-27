@@ -3,6 +3,9 @@ channels:
   - jaimergp/label/unsupported-cudatoolkit-shim
   - conda-forge
   - openeye
+  - openeye
+  - omnia
+  - defaults
 dependencies:
   - numpy
   - networkx

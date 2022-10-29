@@ -30,3 +30,5 @@ dependencies:
     - git+https://github.com/OpenFreeEnergy/gufe@main
     - git+https://github.com/OpenFreeEnergy/openfe@main
     - plugcli
+    - pytest
+    - nbmake

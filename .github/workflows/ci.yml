@@ -30,19 +30,6 @@ jobs:
         run: |
           mamba info -a
           mamba list
-      - uses: yaananth/run-notebook@v2
-        env:
-          RUNNER: ${{ toJson(runner) }}
-          SECRETS: ${{ toJson(secrets) }}
-          GITHUB: ${{ toJson(github) }}
-        with:
-          notebook: "notebooks/test.ipynb"
-          isReport: False
-          poll: True
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: output
-          path: ${{ RUNNER.temp }}/nb-runner
-        env:
-          RUNNER: ${{ toJson(runner) }}
+      - name: "Test Notebooks"
+        run: |
+          pytest --nbmake notebooks/*ipynb 
